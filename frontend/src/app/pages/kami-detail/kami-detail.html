@@ -1,0 +1,18 @@
+<p *ngIf="loading">Loading...</p>
+<p *ngIf="error">{{ error }}</p>
+
+<div *ngIf="kami">
+  <a routerLink="/kami">← Back to all Kami</a>
+  <h2>{{ kami.name }}</h2>
+  <h3>{{ kami.title }}</h3>
+  <p>{{ kami.description }}</p>
+
+  <ul>
+    <li><strong>Domain:</strong> {{ kami.domain }}</li>
+    <li><strong>Symbol:</strong> {{ kami.symbol }}</li>
+    <li><strong>Shrine:</strong> {{ kami.shrine }}</li>
+  </ul>
+
+  <h4>Myth</h4>
+  <p>{{ kami.myth }}</p>
+</div>

@@ -1,0 +1,12 @@
+<h2>Explore the Kami</h2>
+
+<p *ngIf="loading">Loading...</p>
+<p *ngIf="error">{{ error }}</p>
+
+<div *ngIf="!loading && !error" class="kami-grid">
+  <div class="kami-card" *ngFor="let kami of kamiList">
+    <h3>{{ kami.name }}</h3>
+    <p>{{ kami.title }}</p>
+    <a [routerLink]="['/kami', kami.id]">View details</a>
+  </div>
+</div>
