@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Cormorant+Garamond:ital@0;1&display=swap');
+
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 4rem 2rem 6rem;
+  background-color: #10131F;
+  background-image:
+    radial-gradient(circle at 100% 50%, transparent 20%, rgba(212,175,106,0.08) 21%, rgba(212,175,106,0.08) 34%, transparent 35%),
+    radial-gradient(circle at 0% 50%, transparent 20%, rgba(212,175,106,0.08) 21%, rgba(212,175,106,0.08) 34%, transparent 35%);
+  background-size: 70px 70px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #EFE6D5;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem;
+}
+
+.kanji-bg {
+  position: absolute;
+  top: -3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 11rem;
+  color: rgba(199, 68, 44, 0.08);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero h2 {
+  position: relative;
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  letter-spacing: 0.08em;
+  margin: 0 0 1rem;
+  color: #F2E8D5;
+}
+
+.hero h2::after {
+  content: "◆";
+  display: block;
+  font-size: 0.7rem;
+  color: #C6A15B;
+  margin-top: 1rem;
+  letter-spacing: 0.5em;
+}
+
+.subtitle {
+  position: relative;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #C9BFA8;
+  letter-spacing: 0.03em;
+}
+
+.status {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #C9BFA8;
+}
+
+.status.error {
+  color: #E0745A;
+}
+
+.kami-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 2.5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.kami-card {
+  position: relative;
+  background: #F2E8D5;
+  padding: 2.2rem 1.5rem 1.6rem;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* hanging thread + hole, like an ema plaque */
+.kami-card::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 18px;
+  background: #C6A15B;
+}
+
+.kami-card::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10131F;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+}
+
+.kami-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.seal {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #B7332A;
+  color: #F2E8D5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  transform: rotate(-8deg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  border: 2px solid rgba(242, 232, 213, 0.4);
+  writing-mode: vertical-rl;
+}
+
+.kami-card h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.6rem 0 0.3rem;
+  color: #1F1B16;
+}
+
+.kami-card .title {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #6b6255;
+  margin: 0 0 1.4rem;
+}
+
+.kami-card a {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: #B7332A;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.kami-card a:hover {
+  border-color: #B7332A;
+  color: #232B45;
+}
