@@ -9,6 +9,7 @@
 
 <div *ngIf="!loading() && !error()" class="kami-grid">
   <div class="kami-card" *ngFor="let kami of kamiList()">
+    <img [src]="kami.image_url" [alt]="kami.name" class="kami-img" />
     <div class="seal">{{ kanjiFor(kami.name) }}</div>
     <h3>{{ kami.name }}</h3>
     <p class="title">{{ kami.title }}</p>

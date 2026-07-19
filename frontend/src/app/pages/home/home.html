@@ -1,6 +1,45 @@
-<p>home works!</p>
-<h2>Welcome to KamiVerse</h2>
-<p>
-Learn about Shinto mythology and explore the world of Kami.
-</p>
-<a routerLink="/kami"><button>Explore Kami</button></a>
+<section class="hero">
+  <span class="kanji-bg">神</span>
+  <p class="eyebrow">神道 · Shinto Mythology</p>
+  <h1>KamiVerse</h1>
+  <p class="tagline">Step through the torii and meet the spirits who shape wind, wave, harvest, and sun.</p>
+  <a routerLink="/kami" class="cta">Explore the Kami →</a>
+</section>
+
+<section class="about">
+  <div class="about-inner">
+    <h2>What is Shinto?</h2>
+    <div class="divider">◆</div>
+    <p>
+      Shinto is Japan's indigenous spiritual tradition, rooted in the belief that
+      the world is filled with kami — sacred spirits present in mountains, rivers,
+      storms, ancestors, and everyday life. There is no single founder or fixed
+      scripture; instead, Shinto lives in shrines, seasonal festivals, and quiet
+      rituals of purification and gratitude.
+    </p>
+    <p>
+      Kami are not distant, all-powerful gods in the Western sense. They can be
+      grand, like Amaterasu who lights the sky, or intimate, like the spirit of a
+      single ancient tree. To know the kami is to understand how Japan sees the
+      natural world — not as a backdrop, but as something alive and worthy of respect.
+    </p>
+  </div>
+</section>
+
+<section class="featured">
+  <h2>Featured Kami</h2>
+  <div class="divider">◆</div>
+
+  <p class="status" *ngIf="loading()">Loading...</p>
+
+  <div class="featured-grid" *ngIf="!loading()">
+    <div class="kami-card" *ngFor="let kami of featured()">
+      <div class="seal">{{ kanjiFor(kami.name) }}</div>
+      <h3>{{ kami.name }}</h3>
+      <p class="title">{{ kami.title }}</p>
+      <a [routerLink]="['/kami', kami.id]">View details →</a>
+    </div>
+  </div>
+
+  <a routerLink="/kami" class="see-all">See all Kami →</a>
+</section>

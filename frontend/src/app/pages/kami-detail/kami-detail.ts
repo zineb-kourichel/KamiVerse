@@ -1,8 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Kami } from '../../services/kami';
 import { KamiData } from '../../models/kami.model';
+
+const KANJI_MAP: Record<string, string> = {
+  'Amaterasu': '天照',
+  'Susanoo': '須佐之男',
+  'Tsukuyomi': '月読',
+  'Izanagi': '伊邪那岐',
+  'Izanami': '伊邪那美',
+  'Inari': '稲荷',
+  'Hachiman': '八幡',
+  'Raijin': '雷神',
+  'Fujin': '風神',
+  'Ebisu': '恵比寿'
+};
 
 @Component({
   selector: 'app-kami-detail',
@@ -11,9 +24,9 @@ import { KamiData } from '../../models/kami.model';
   styleUrl: './kami-detail.css',
 })
 export class KamiDetail implements OnInit {
-  kami: KamiData | null = null;
-  loading = true;
-  error = '';
+  kami = signal<KamiData | null>(null);
+  loading = signal(true);
+  error = signal('');
 
   constructor(
     private route: ActivatedRoute,
@@ -24,14 +37,18 @@ export class KamiDetail implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.kamiService.getKami(id).subscribe({
       next: (data) => {
-        this.kami = data;
-        this.loading = false;
+        this.kami.set(data);
+        this.loading.set(false);
       },
       error: (err) => {
-        this.error = 'Kami not found.';
-        this.loading = false;
+        this.error.set('Kami not found.');
+        this.loading.set(false);
         console.error(err);
       }
     });
+  }
+
+  kanjiFor(name: string): string {
+    return KANJI_MAP[name] ?? '神';
   }
 }

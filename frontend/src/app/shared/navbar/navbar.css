@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600&family=Cormorant+Garamond&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+  background: #10131F;
+  border-bottom: 1px solid rgba(198, 161, 91, 0.25);
+  font-family: 'Cormorant Garamond', serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  color: #F2E8D5;
+  text-decoration: none;
+}
+
+.brand-kanji {
+  color: #B7332A;
+  font-size: 1.5rem;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links a {
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  color: #C9BFA8;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.links a:hover {
+  color: #F2E8D5;
+}
+
+.links a.active {
+  color: #C6A15B;
+  border-color: #C6A15B;
+}

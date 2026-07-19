@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Cormorant+Garamond:ital@0;1&display=swap');
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #10131F;
+  font-family: 'Cormorant Garamond', serif;
+  color: #EFE6D5;
+  padding: 3rem 2rem 6rem;
+}
+
+.status {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #C9BFA8;
+}
+
+.status.error {
+  color: #E0745A;
+}
+
+.detail {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.back {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: #C6A15B;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 3rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.back:hover {
+  border-color: #C6A15B;
+  color: #F2E8D5;
+}
+
+.kami-img-large {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  filter: sepia(10%) contrast(1.05);
+}
+
+.seal-large {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: #B7332A;
+  color: #F2E8D5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+  box-shadow: 0 10px 26px rgba(183,51,42,0.4);
+  border: 3px solid rgba(242, 232, 213, 0.3);
+}
+
+.detail h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 3rem;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.4rem;
+  color: #F2E8D5;
+}
+
+.detail .title {
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #C9BFA8;
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  color: #C6A15B;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #EFE6D5;
+  margin-bottom: 3rem;
+}
+
+.facts {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(198, 161, 91, 0.25);
+  border-bottom: 1px solid rgba(198, 161, 91, 0.25);
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fact .label {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C6A15B;
+}
+
+.fact .value {
+  font-size: 1.1rem;
+  color: #F2E8D5;
+}
+
+.myth-section {
+  text-align: left;
+  background: #F2E8D5;
+  color: #1F1B16;
+  padding: 2.5rem;
+  border-radius: 2px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.myth-section h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+  text-align: center;
+  color: #B7332A;
+}
+
+.myth-section p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #3a3226;
+}

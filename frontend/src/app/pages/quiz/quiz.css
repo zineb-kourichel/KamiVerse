@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Cormorant+Garamond:ital@0;1&display=swap');
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #10131F;
+  font-family: 'Cormorant Garamond', serif;
+  color: #EFE6D5;
+  padding: 4rem 2rem 6rem;
+}
+
+.quiz-wrapper {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(198, 161, 91, 0.2);
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #B7332A;
+  transition: width 0.3s ease;
+}
+
+.step {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  margin-bottom: 2rem;
+}
+
+.question {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.4;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: #EFE6D5;
+  background: rgba(242, 232, 213, 0.05);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.option:hover {
+  background: rgba(183, 51, 42, 0.15);
+  border-color: #B7332A;
+  transform: translateX(4px);
+}
+
+.status {
+  font-style: italic;
+  color: #C9BFA8;
+  font-size: 1.2rem;
+}
+
+.result {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  margin-bottom: 1.5rem;
+}
+
+.result-img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 4px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  filter: sepia(10%) contrast(1.05);
+  margin-bottom: 1rem;
+}
+
+.seal {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  background: #B7332A;
+  color: #F2E8D5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+  box-shadow: 0 8px 20px rgba(183,51,42,0.4);
+  border: 2px solid rgba(242, 232, 213, 0.3);
+}
+
+.result h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  margin: 0 0 0.3rem;
+  color: #F2E8D5;
+}
+
+.result .title {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #C9BFA8;
+  margin-bottom: 1.5rem;
+}
+
+.result .description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  color: #EFE6D5;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cta {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: #10131F;
+  background: #C6A15B;
+  padding: 0.8rem 2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+.retry {
+  background: none;
+  border: none;
+  color: #C9BFA8;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.retry:hover {
+  color: #F2E8D5;
+}

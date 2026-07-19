@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Cormorant+Garamond:ital@0;1&display=swap');
+
+:host {
+  display: block;
+  background-color: #10131F;
+  font-family: 'Cormorant Garamond', serif;
+  color: #EFE6D5;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+  background-image:
+    radial-gradient(circle at 100% 50%, transparent 20%, rgba(212,175,106,0.08) 21%, rgba(212,175,106,0.08) 34%, transparent 35%),
+    radial-gradient(circle at 0% 50%, transparent 20%, rgba(212,175,106,0.08) 21%, rgba(212,175,106,0.08) 34%, transparent 35%);
+  background-size: 70px 70px;
+}
+
+.kanji-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 34rem;
+  line-height: 1;
+  color: rgba(199, 68, 44, 0.05);
+  pointer-events: none;
+  user-select: none;
+}
+
+.eyebrow {
+  position: relative;
+  font-size: 1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  position: relative;
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 5.5rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 1.2rem;
+  color: #F2E8D5;
+}
+
+.tagline {
+  position: relative;
+  font-style: italic;
+  font-size: 1.3rem;
+  max-width: 560px;
+  color: #C9BFA8;
+  margin-bottom: 2.5rem;
+}
+
+.cta {
+  position: relative;
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  color: #10131F;
+  background: #B7332A;
+  padding: 0.9rem 2.2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(183,51,42,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  background: #C6A15B;
+  box-shadow: 0 12px 28px rgba(198,161,91,0.4);
+}
+
+/* ---------- ABOUT ---------- */
+.about {
+  padding: 6rem 2rem;
+  background: #EFE6D5;
+  color: #1F1B16;
+}
+
+.about-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2,
+.featured h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.6rem;
+}
+
+.divider {
+  color: #B7332A;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  margin-bottom: 2rem;
+}
+
+.about p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #3a3226;
+  margin-bottom: 1.4rem;
+  text-align: left;
+}
+
+/* ---------- FEATURED ---------- */
+.featured {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.status {
+  color: #C9BFA8;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  padding-top: 1rem;
+}
+
+.kami-card {
+  position: relative;
+  background: #F2E8D5;
+  padding: 2.2rem 1.5rem 1.6rem;
+  border-radius: 2px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kami-card::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 18px;
+  background: #C6A15B;
+}
+
+.kami-card::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10131F;
+}
+
+.kami-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.seal {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #B7332A;
+  color: #F2E8D5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transform: rotate(-8deg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  border: 2px solid rgba(242, 232, 213, 0.4);
+  writing-mode: vertical-rl;
+}
+
+.kami-card h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0.6rem 0 0.3rem;
+  color: #1F1B16;
+}
+
+.kami-card .title {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #6b6255;
+  margin: 0 0 1.2rem;
+}
+
+.kami-card a {
+  font-size: 0.9rem;
+  color: #B7332A;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.kami-card a:hover {
+  border-color: #B7332A;
+  color: #C6A15B;
+}
+
+.see-all {
+  display: inline-block;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  color: #C6A15B;
+  text-decoration: none;
+  border-bottom: 1px solid #C6A15B;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.see-all:hover {
+  color: #EFE6D5;
+  border-color: #EFE6D5;
+}

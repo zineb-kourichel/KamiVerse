@@ -1,18 +1,35 @@
-<p *ngIf="loading">Loading...</p>
-<p *ngIf="error">{{ error }}</p>
+<p class="status" *ngIf="loading()">Loading...</p>
+<p class="status error" *ngIf="error()">{{ error() }}</p>
 
-<div *ngIf="kami">
-  <a routerLink="/kami">← Back to all Kami</a>
-  <h2>{{ kami.name }}</h2>
-  <h3>{{ kami.title }}</h3>
-  <p>{{ kami.description }}</p>
+<div class="detail" *ngIf="kami() as k">
+  <a routerLink="/kami" class="back">← Back to all Kami</a>
 
-  <ul>
-    <li><strong>Domain:</strong> {{ kami.domain }}</li>
-    <li><strong>Symbol:</strong> {{ kami.symbol }}</li>
-    <li><strong>Shrine:</strong> {{ kami.shrine }}</li>
-  </ul>
+  <div class="seal-large">{{ kanjiFor(k.name) }}</div>
 
-  <h4>Myth</h4>
-  <p>{{ kami.myth }}</p>
+  <h1>{{ k.name }}</h1>
+  <p class="title">{{ k.title }}</p>
+
+  <div class="divider">◆</div>
+
+  <p class="description">{{ k.description }}</p>
+
+  <div class="facts">
+    <div class="fact">
+      <span class="label">Domain</span>
+      <span class="value">{{ k.domain }}</span>
+    </div>
+    <div class="fact">
+      <span class="label">Symbol</span>
+      <span class="value">{{ k.symbol }}</span>
+    </div>
+    <div class="fact">
+      <span class="label">Shrine</span>
+      <span class="value">{{ k.shrine }}</span>
+    </div>
+  </div>
+
+  <div class="myth-section">
+    <h2>The Myth</h2>
+    <p>{{ k.myth }}</p>
+  </div>
 </div>

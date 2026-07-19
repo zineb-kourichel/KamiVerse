@@ -1,0 +1,44 @@
+<div class="quiz-wrapper">
+
+  <ng-container *ngIf="!finished()">
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="progress"></div>
+    </div>
+    <p class="step">Question {{ currentIndex() + 1 }} of {{ questions.length }}</p>
+
+    <h2 class="question">{{ currentQuestion.text }}</h2>
+
+    <div class="options">
+      <button
+        class="option"
+        *ngFor="let option of currentQuestion.options"
+        (click)="answer(option.kami)">
+        {{ option.text }}
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="finished()">
+    <p class="status" *ngIf="loadingResult()">Consulting the kami...</p>
+
+    <div class="result" *ngIf="result() as k">
+      <p class="eyebrow">You are most like</p>
+      <img [src]="k.image_url" [alt]="k.name" class="result-img" />
+      <div class="seal">{{ kanjiFor(k.name) }}</div>
+      <h1>{{ k.name }}</h1>
+      <p class="title">{{ k.title }}</p>
+      <p class="description">{{ k.description }}</p>
+
+      <div class="actions">
+        <a [routerLink]="['/kami', k.id]" class="cta">View full profile →</a>
+        <button class="retry" (click)="restart()">Retake the quiz</button>
+      </div>
+    </div>
+
+    <div class="result" *ngIf="!result() && !loadingResult()">
+      <p>Could not determine your kami. Is the backend running?</p>
+      <button class="retry" (click)="restart()">Try again</button>
+    </div>
+  </ng-container>
+
+</div>
